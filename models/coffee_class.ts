@@ -21,10 +21,10 @@ class Coffees {
 const springfield = new Coffees(1, "Spring Field", 5, 1)
 const makkiato = new Coffees(2, "macchiato", 7, 0.2)
 const cappucino = new Coffees(3, "Cappucino", 6, 0.5)
-const hot_chocholate = new Coffees(4, "hot chocholate", 3, 0.3)
+const hot_chocolate = new Coffees(4, "hot chocolate", 3, 0.3)
 
 const drinksMenu: Coffees[] = [
-  springfield, makkiato, cappucino, hot_chocholate
+  springfield, makkiato, cappucino, hot_chocolate
 ]
 
 export { drinksMenu, Coffees } 
