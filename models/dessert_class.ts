@@ -12,7 +12,7 @@ class Desserts extends Menu {
 
   const tiramisu = new Desserts( 1, "Tiramisu", 8.5 )
   const cheesecake = new Desserts( 2, "Cheesecake",7.0 )
- const chocholateLavaCake = new Desserts( 3, "Chocolate Lava Cake", 9.0 )
+ const chocolateLavaCake = new Desserts( 3, "Chocolate Lava Cake", 9.0 )
  const pannaCotta = new Desserts(4, "Panna Cotta", 6.5 )
   const CremeBrulee = new Desserts( 5, "Crème Brûlée", 8.0 )
 
