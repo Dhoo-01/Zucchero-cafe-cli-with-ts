@@ -4,6 +4,7 @@ import { ZuccheroCafe } from "../models/zucchero_cafe.ts";
 import { foodsMenu } from "../models/menu_class.ts";
 import { drinksMenu } from "../models/coffee_class.ts";
 import { dessertMenu } from "../models/dessert_class.ts";
+import { Atm } from "../models/atm_class.ts";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -11,6 +12,7 @@ const rl = readline.createInterface({
 });
 
 const cafe = new ZuccheroCafe()
+const atm = new Atm()
 
 const menuVariants: string[] = [
   "foods",
@@ -68,11 +70,33 @@ rl.question("what's your name? \n", (customer: string) => {
               chooseMenu()
             } else {
               console.log("wakarimashita")
-              const totalPrice: any = user.orders.reduce((sum, order) => {
+              const totalPrice: number = user.orders.reduce((sum, order) => {
                 console.log(`${order.name}: ${order.price}`)
                 return sum + order.price
               }, 0)
               console.log(`with total price: ${totalPrice}`)
+              function paymenPart() {
+                rl.question("enter the money you wanna pay!", (money: string) => {
+                  const payAmount: number = parseInt(money)
+                  if (payAmount < totalPrice) {
+                    console.log("maaf saldo anda tidak cukup!")
+                    rl.question("you can withdraw from atm", (yeah: string) => {
+                      if (yeah === "y") {
+                        rl.question("how much do you want to withdraw? ", (much: string) => {
+                          const amount: number = parseInt(much)
+                          atm.withdraw(amount, user)
+                          paymenPart()
+                        })
+                      } else {
+                        console.log("apalah")
+                      }
+                    })
+                  } else {
+                    cafe.generateReceipt(user, totalPrice, payAmount)
+                  }
+                })
+              }
+              paymenPart()
             }
           })
         } else {

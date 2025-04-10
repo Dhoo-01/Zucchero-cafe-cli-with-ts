@@ -11,20 +11,17 @@ class Menu {
 }
 
 class Foods extends Menu {
-  isSoup: boolean
-
-  constructor(id: number, name: string, price: number, isSoup: boolean) {
+  constructor(id: number, name: string, price: number) {
     super(id, name, price)
-    this.isSoup = isSoup
   }
 }
 
-const Pizza = new Foods(1, "Pizza", 10, false)
-const BeefStroganoff = new Foods(1, "Beef Stroganoff", 75000, true) // Rusia
-const CoqAuVin = new Foods(2, "Coq au Vin", 85000, true) // Prancis
-const Goulash = new Foods(3, "Goulash", 65000, true) // Hungaria
-const Paella = new Foods(4, "Paella", 70000, false) // Spanyol
-const Moussaka = new Foods(5, "Moussaka", 68000, false) // Yunani
+const Pizza = new Foods(1, "Pizza", 10)
+const BeefStroganoff = new Foods(1, "Beef Stroganoff", 8) // Rusia
+const CoqAuVin = new Foods(2, "Coq au Vin", 9) // Prancis
+const Goulash = new Foods(3, "Goulash", 7) // Hungaria
+const Paella = new Foods(4, "Paella", 8) // Spanyol
+const Moussaka = new Foods(5, "Moussaka", 7) // Yunani
 
 const foodsMenu: Foods[] = [
   Pizza, BeefStroganoff, CoqAuVin, Goulash, Paella, Moussaka
