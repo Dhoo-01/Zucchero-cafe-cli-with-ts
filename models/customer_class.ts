@@ -1,11 +1,10 @@
 class Customer {
   name: string
-  currency?: number = 5000
+  wallet: number = 100
   orders: { name: string; price: number }[]
 
-  constructor(name: string, /*currency: number*/) {
+  constructor(name: string) {
     this.name = name
-    /*    this.currency = currency*/
     this.orders = []
   }
 
@@ -13,8 +12,9 @@ class Customer {
     this.orders.push(order)
   }
 
-  countTotalOrder() {
-    console.log(this.orders)
+  pay(amount: number): number {
+    console.log(`you pay for ${amount}, and your money left ${this.wallet -= amount} in your wallet`)
+    return amount
   }
 }
 

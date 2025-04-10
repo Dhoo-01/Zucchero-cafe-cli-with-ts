@@ -10,15 +10,15 @@ class Desserts extends Menu {
   }
 }
 
-  const tiramisu = new Desserts( 1, "Tiramisu", 8.5 )
-  const cheesecake = new Desserts( 2, "Cheesecake",7.0 )
- const chocolateLavaCake = new Desserts( 3, "Chocolate Lava Cake", 9.0 )
- const pannaCotta = new Desserts(4, "Panna Cotta", 6.5 )
-  const CremeBrulee = new Desserts( 5, "Crème Brûlée", 8.0 )
+  const tiramisu = new Desserts( 1, "Tiramisu", 9)
+  const cheesecake = new Desserts( 2, "Cheesecake",7 )
+ const chocolateLavaCake = new Desserts( 3, "Chocolate Lava Cake", 9 )
+ const pannaCotta = new Desserts(4, "Panna Cotta", 7 )
+  const CremeBrulee = new Desserts( 5, "Crème Brûlée", 8 )
 
 
 const dessertMenu: Desserts[] = [
-  tiramisu, cheesecake, chocholateLavaCake, pannaCotta, CremeBrulee
+  tiramisu, cheesecake, chocolateLavaCake, pannaCotta, CremeBrulee
 ];
 
 export { dessertMenu, Desserts }
